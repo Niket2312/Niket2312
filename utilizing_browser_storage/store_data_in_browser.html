@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Using browser to store data</title>
+    </head>
+    <body>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <script>
+            localStorage.setItem("name","Niket")
+            document.getElementById("p1").innerHTML=localStorage.getItem("name")
+            sessionStorage.setItem("lname","Doshi")
+            document.getElementById("p2").innerHTML=sessionStorage.getItem("lname")
+        </script>
+    </body>
+</html>

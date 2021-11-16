@@ -1,0 +1,212 @@
+<!-- <html>
+  <head>
+    <title>print page</title>
+    <button id="btn"  onclick="printPage()">print</button>
+    <button onclick="loadJS('file1.js');">Load file1.js</button>
+    <button onclick="loadJS('file2.js');">Load file2.js</button>
+  </head>
+  <body>
+    <script>
+      function printPage(){
+        print()
+      }
+      printPage()
+      function loadJs(files){
+        let file=document.createElement("script");
+        file.type="application/javascript";
+        file.src=files;
+        document.body.appendChild(file)
+      }
+      </script>
+  </body>
+</html> -->
+
+<!-- <html>
+  <head>
+    <title></title>
+    <div id="div1">
+
+    </div>
+  </head>
+  <body>
+    <script>
+      let p1=document.createElement("p");
+      let node=document.createTextNode("This is para1");
+      p1.appendChild(node);
+      let element=document.getElementById("div1");
+      element.appendChild(p1);
+      p1.setAttribute("class","data-class-info")
+    </script>
+      -->
+
+      <!-- <html>
+        <head>
+          <title>calculator</title>
+        </head>
+        <body>
+          <script>
+            let input=parseInt(prompt("enter the value"))
+            let input2=parseInt(prompt("enter another value"));
+            let add=parseInt(input+input2);
+            let sub=parseInt(input-input2);
+            let mul=parseInt(input*input2);
+            let div=parseInt(input/input2);
+            parseInt(console.log(add));
+            console.log(sub);
+            console.log(mul);
+            console.log(div);
+          </script>
+        </body>
+      </html>
+ -->
+
+
+ 
+ <!-- <html>
+   <head>
+     <title>onload</title>
+   </head>
+   <body>
+     <script>
+       function temp(){
+         alert("Hello");
+       }
+       window.onload=temp;
+     </script>
+   </body>
+ </html> -->
+
+ <!-- <html>
+  <head>
+    <title>onblur event</title>
+  </head>
+  <body>
+    Enter your name:<input type="text" onblur="myFunction()" id="demo">
+    <script>
+      function myFunction(){
+        let input=document.getElementById("demo");
+        input.value=input.value.toUpperCase();
+      }
+    </script>
+  </body>
+</html> 
+ -->
+
+ <!-- <html>
+   <head>
+     <title>onkeydown</title>
+   </head>
+   <body>
+     <input type="text" id="demo" onkeydown="myFunction()" onkeyup="myFunction2()">
+     <script>
+     function myFunction(){
+       let input=document.getElementById("demo").style.backgroundColor="red";
+     }  
+     function myFunction2(){
+       let input2=document.getElementById("demo").style.backgroundColor="green"
+     } 
+    </script>
+   </body>
+ </html> -->
+
+
+
+
+   <!-- <head>
+     <title>onkeydown</title>
+   </head>
+   <body>
+    <select id="Zdd_1">
+      <option value="java">java</option>
+      <option value="php">php</option>
+      <option value="angular">angular</option>
+  </select>
+     <script>
+       var dropdown = document.getElementById("Zdd_1");
+dropdown.onchange = function(demo){
+    if(dropdown.value=="java"){
+        alert("java")
+    }
+    if(dropdown.value=="angular"){
+      alert("angular")
+    }
+    if(dropdown.value=="php"){
+      alert("php")
+    }
+}
+       </script>
+       
+   </body>
+ </html> -->
+
+
+  <!-- <html>
+   <head>
+     <title>Reverse string</title>
+   </head>
+   <body>
+     <script>
+       let input="Niket";
+       let input2="";
+       for(let i=input.length-1;i>=0;i--){
+         input2=input2+input[i];
+       }
+       console.log(input2)
+     </script>
+   </body>
+ </html> 
+ -->
+
+ <!-- <html>
+   <head>
+     <body>
+       <script>
+         let str="Hello";
+         let one=str.slice(1,4);
+         console.log(one)
+       </script>
+     </body>
+   </head>
+ </html> -->
+
+
+ <!-- <html>
+   <head>
+     <title>try catch</title>
+   </head>
+   <body>
+     <script>
+       try{
+         addalert("Hello world");
+       }
+       catch(err){
+         alert("there is can error")
+       }
+     </script>]
+   </body>
+ </html> -->
+
+ <html>
+   <head>
+     <title>Date formates</title>
+   </head>
+   <body>
+     <p id="p1"></p>
+     <p id="p2"></p>
+     <p id="p3"></p>
+     <p id="p4"></p>
+     </p>
+    <script>
+      let d=new Date();
+      let d1=new Date("2015-03-20")
+      document.getElementById("p1").innerHTML=d1
+      let d2=new Date("2015-03")
+      document.getElementById("p1").innerHTML=d2
+      let d3=new Date("2000");
+      document.getElementById("p1").innerHTML=d3      
+      let d4=new Date("Dec 23 2000")
+      document.getElementById("p1").innerHTML=d4
+      
+    </script>
+   </body>
+ </html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            .image{
+                display: block;
+                margin-top: 600px;
+                width: 400px;
+                height: 400px;
+                border: 1px solid black ;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="image1" class="image" data-img="/home/pp-8/Downloads/white_black_pigeon_bird_with_red_legs_is_walking_on_road_hd_birds.jpg" 
+       >
+       <img id="image2" class="image" data-img="/home/pp-8/Downloads/white_black_pigeon_bird_with_red_legs_is_walking_on_road_hd_birds.jpg"> 
+       <img id="image3" class="image" data-img="/home/pp-8/Downloads/white_black_pigeon_bird_with_red_legs_is_walking_on_road_hd_birds.jpg">
+       <img id="image4" class="image" data-img="/home/pp-8/Downloads/white_black_pigeon_bird_with_red_legs_is_walking_on_road_hd_birds.jpg" >
+
+       <script>
+           let options={
+               root:null,
+               rootMargin:'0px',
+               threshold:0.25
+           };
+           let callback=(entries,observer)=>{
+               entries.forEach(entry => {
+                 if(entry.isIntersecting
+                 && entry.target.className==='image'){
+                     let imageUrl=entry.target.getAttribute('data-img');
+                     if(imageUrl){
+                         entry.target.src=imageUrl;
+                         observer.unobserver(entry.target)
+                     }
+                 }  
+               });
+           }
+           let observer=new IntersectionObserver(callback,options)
+           observer.observe(document.querySelector('#image1'))
+           observer.observe(document.querySelector('#image2'))
+           observer.observe(document.querySelector('#image3'))
+           observer.observe(document.querySelector('#image4'))
+
+
+           </script>
+    </body>
+</html>
