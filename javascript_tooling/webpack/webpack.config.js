@@ -7,5 +7,6 @@ module.exports = {
         path: resolve(__dirname,'dist')
 
     },
+    //target:'node',
     mode: 'developement'
 }
