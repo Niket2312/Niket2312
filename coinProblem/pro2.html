@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <script>
+            function checkCashRegister(price, cash, cid) {
+
+let changeObject = 
+{"ONE-HUNDRED": 0,
+"TWENTY": 0,
+"TEN": 0,
+"FIVE": 0,
+"ONE": 0,
+"QUARTER": 0,
+"DIME": 0,
+"NICKEL": 0,
+"PENNY": 0} 
+
+var box = [];
+ 
+let balance = cash - price; 
+console.log(balance); 
+
+let drawerArray = cid.map(elem => elem[1]);
+console.log(drawerArray); 
+
+let typeOfMoney = [1,5,10,25,100,500,1000,2000,10000]
+function giveMoney() {
+if (balance < 0.001) {
+ for (var prop in changeObject) 
+ {
+   if(changeObject[prop] != 0){ box.push([prop,changeObject[prop]/100])} 
+ }
+let status1 = "OPEN";
+if (drawerArray[0] === 0) {
+  status1 = "CLOSED";
+};
+let answerObj = {};
+answerObj["status"] = status1;
+answerObj["change"] = box
+ console.log(drawerArray);
+ console.log(box);
+ console.log(answerObj);
+ console.log(balance);
+ return answerObj;
+} 
+
+if (balance > 0 && typeOfMoney.length === 0) {
+  let status1 = "INSUFFICIENT_FUNDS";
+  var answerObj = {};
+  answerObj["status"] = "INSUFFICIENT_FUNDS" ;
+  answerObj["change"] = [];
+  return answerObj;
+}
+if (balance > 0 && balance < typeOfMoney[typeOfMoney.length - 1]) {
+ 
+  typeOfMoney.pop();
+  drawerArray.pop()
+  console.log(typeOfMoney);
+  console.log(drawerArray);
+  console.log(balance)
+  return giveMoney()
+}
+if (balance >= typeOfMoney[typeOfMoney.length - 1] && drawerArray[drawerArray.length -1] <  typeOfMoney[typeOfMoney.length - 1]) {
+  drawerArray.pop()
+  typeOfMoney.pop();
+  return giveMoney()
+}
+if (balance >= typeOfMoney[typeOfMoney.length - 1] && drawerArray[drawerArray.length -1] >= typeOfMoney[typeOfMoney.length - 1]) 
+{ drawerArray[drawerArray.length -1] -= typeOfMoney[typeOfMoney.length - 1];
+  balance -= Math.round(typeOfMoney[typeOfMoney.length - 1]*100)/100;
+  balance = Math.round(balance * 100) / 100;
+  console.log(balance);
+  console.log(changeObject);
+ 
+
+  switch(typeOfMoney[typeOfMoney.length -1]){
+    case 10000:
+    changeObject["ONE-HUNDRED"] += 10000;
+    break;  
+    case 2000:
+    changeObject["TWENTY"] += 2000;
+    break;
+    case 1000:
+    changeObject["TEN"] += 1000;
+    break;
+    case 500:
+    changeObject["FIVE"] += 500;
+    break;
+    case 100:
+    changeObject["ONE"] += 100;
+    break;
+    case 25:
+    changeObject["QUARTER"] += 25;
+    break;
+    case 10:
+    changeObject["DIME"] += 10;
+    break;
+    case 5:
+    changeObject["NICKEL"] += 5;
+    break;
+    case 1:
+    changeObject["PENNY"] += 1;
+    break;
+
+    }
+  console.log(balance);
+  return giveMoney();
+}
+
+
+
+}
+
+return giveMoney();
+
+}
+
+checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05],
+ ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], 
+ ["TWENTY", 60], ["ONE HUNDRED", 100]])
+ 
+
+        </script>
+    </body>
+</html>
